@@ -18,6 +18,18 @@ public class Contact {
     String socialMediaUrl;
     private String pushId;
 
+    public Contact(String phone, String name, String email, String street, String city, String state, String zip, String photoUrl, String socialMediaUrl) {
+        this.phone = phone;
+        this.name = name;
+        this.email = email;
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.photoUrl = photoUrl;
+        this.socialMediaUrl = socialMediaUrl;
+    }
+
     public Contact(String name) {
         this.name = name;
     }
