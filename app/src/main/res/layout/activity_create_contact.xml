@@ -31,7 +31,8 @@
         android:hint="Enter Contact's Phone Number"
         android:gravity="center"
         android:layout_below="@+id/contactName"
-        android:layout_margin="5dp"/>
+        android:layout_margin="5dp"
+        android:inputType="phone" />
 
     <EditText
         android:layout_width="match_parent"
@@ -76,7 +77,8 @@
         android:hint="Enter Contact's Zip Code"
         android:gravity="center"
         android:layout_below="@+id/contactState"
-        android:layout_margin="5dp"/>
+        android:layout_margin="5dp"
+        android:inputType="number"/>
 
     <EditText
         android:layout_width="match_parent"
