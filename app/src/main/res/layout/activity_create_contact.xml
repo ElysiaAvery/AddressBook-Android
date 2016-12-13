@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.guest.addressbook.ui.CreateContactActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff"
+        android:text="Contact Creation"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:id="@+id/header"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contactName"
+        android:hint="Enter Contact's Name"
+        android:gravity="center"
+        android:layout_below="@+id/header"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contactPhone"
+        android:hint="Enter Contact's Phone Number"
+        android:gravity="center"
+        android:layout_below="@+id/contactName"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contactEmail"
+        android:hint="Enter Contact's Email"
+        android:gravity="center"
+        android:layout_below="@+id/contactPhone"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contactStreet"
+        android:hint="Enter Contact's Address"
+        android:gravity="center"
+        android:layout_below="@+id/contactEmail"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contactCity"
+        android:hint="Enter Contact's City"
+        android:gravity="center"
+        android:layout_below="@+id/contactStreet"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contactState"
+        android:hint="Enter Contact's State"
+        android:gravity="center"
+        android:layout_below="@+id/contactCity"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contactZip"
+        android:hint="Enter Contact's Zip Code"
+        android:gravity="center"
+        android:layout_below="@+id/contactState"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contactPhotoUrl"
+        android:hint="Enter Contact's Photo URL"
+        android:gravity="center"
+        android:layout_below="@+id/contactZip"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contactSocialMedia"
+        android:hint="Enter Contact's Social Media URL"
+        android:gravity="center"
+        android:layout_below="@+id/contactPhotoUrl"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addContactButton"
+        android:layout_below="@+id/contactSocialMedia"
+        android:background="@color/colorAccent"
+        android:text="Add Contact"/>
+
+</RelativeLayout>

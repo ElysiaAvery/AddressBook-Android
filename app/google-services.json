@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "488462807552",
+    "firebase_url": "https://addressbook-55d6f.firebaseio.com",
+    "project_id": "addressbook-55d6f",
+    "storage_bucket": "addressbook-55d6f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488462807552:android:ed0f550173d8742b",
+        "android_client_info": {
+          "package_name": "com.example.guest.addressbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488462807552-qcj93d3clet967apo29ij0oarhalsca9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.guest.addressbook",
+            "certificate_hash": "C26A55F696AFC4542472B9184CC5219496517160"
+          }
+        },
+        {
+          "client_id": "488462807552-kmb2ppns42u62d3pk4b4rrk29oppmlmk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0RvUbrJR5lsX3ugbhuX1tZ4EEWWWjJ9I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488462807552-kmb2ppns42u62d3pk4b4rrk29oppmlmk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
