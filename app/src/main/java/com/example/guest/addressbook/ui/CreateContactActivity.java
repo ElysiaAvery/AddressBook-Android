@@ -1,11 +1,16 @@
 package com.example.guest.addressbook.ui;
 
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Context;
 
@@ -33,6 +38,7 @@ public class CreateContactActivity extends AppCompatActivity implements View.OnC
     @Bind(R.id.addContactButton) Button mAddContactButton;
     private DatabaseReference mContactReference;
     private Contact mContact;
+    Dialog customProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +68,7 @@ public class CreateContactActivity extends AppCompatActivity implements View.OnC
         boolean validZip = isValidZip(zip);
         boolean validPhoto = isValidPhoto(photo);
         boolean validSocial = isValidSocialMedia(social);
-        if (!validName || !validPhone || !validEmail || !validStreet || !validCity || !validState || !validZip || !validPhoto || !validSocial ) return;
+        if (!validName || !validPhone || !validEmail || !validStreet || !validCity || !validState || !validZip || !validPhoto || !validSocial )return;
         mContact = new Contact(name, phone, email, street, city, state, zip, photo, social);
         mContactReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CONTACT_QUERY);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -77,16 +83,32 @@ public class CreateContactActivity extends AppCompatActivity implements View.OnC
         mContact.setPushId(pushId);
         pushRef.setValue(mContact);
         Context context = getApplicationContext();
-        CharSequence text = "Saved!";
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
 
         Intent intent = new Intent(CreateContactActivity.this, MainActivity.class);
         startActivity(intent);
-
     }
+
+    private void displayCustomProgress(String customMsg) {
+        customProgress = new Dialog(CreateContactActivity.this,R.style.dialogStyle);
+        customProgress.setContentView(R.layout.custom_progress_dialog);
+        TextView msg = (TextView) customProgress.findViewById(R.id.loading_text);
+        if (customMsg.length() > 0) {
+            msg.setVisibility(View.VISIBLE);
+            msg.setText(customMsg);
+        } else {
+            msg.setVisibility(View.GONE);
+        }
+        customProgress.setCancelable(true);
+        customProgress.show();
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                customProgress.dismiss();
+            }
+        }, 1500);
+    }
+
 
     private boolean isValidName(String name) {
         if (name.equals("")) {
@@ -165,7 +187,14 @@ public class CreateContactActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
         if(v == mAddContactButton) {
-            createNewContact();
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                createNewContact();
+                }
+            }, 250);
+            displayCustomProgress("Authenticating...");
         }
     }
 }
